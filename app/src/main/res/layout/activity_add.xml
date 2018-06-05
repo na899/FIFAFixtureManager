@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Add"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Fixture"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textAllCaps="true"/>
+
+    <TextView
+        android:id="@+id/titleDate"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="60dp"
+        android:text="Date"
+        android:textSize="18sp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="50dp" />
+
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/titleDate"
+        android:layout_marginStart="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="150dp"
+        android:inputType="date"/>
+    <TextView
+        android:id="@+id/titleTime"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="110dp"
+        android:text="Time"
+        android:textSize="18sp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="50dp" />
+    <EditText
+        android:id="@+id/time"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/titleTime"
+        android:layout_marginStart="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="150dp"
+        android:inputType="time"/>
+    <TextView
+        android:id="@+id/titleVenue"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="160dp"
+        android:text="Venue"
+        android:textSize="18sp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="50dp"
+        android:padding="5dp"/>
+
+    <EditText
+        android:id="@+id/venue"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/titleVenue"
+        android:layout_marginStart="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="150dp" />
+
+
+    <TextView
+        android:id="@+id/titleTeamA"
+        android:padding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="210dp"
+        android:text="Team A Name"
+        android:layout_marginStart="20dp"
+        android:textSize="18sp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp" />
+    <EditText
+        android:id="@+id/teamA"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/titleTeamA"
+        android:layout_marginStart="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="150dp" />
+
+    <TextView
+        android:id="@+id/titleIconA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="260dp"
+        android:layout_marginStart="35dp"
+        android:text="Team A icon"
+        android:textSize="18sp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="35dp" />
+
+    <Button
+        android:id="@+id/takePicA"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/titleIconA"
+        android:layout_toEndOf="@+id/titleTeamA"
+        android:text="Take picture"
+        android:textSize="10sp"
+        android:layout_toRightOf="@+id/titleTeamA" />
+
+    <Button
+        android:id="@+id/choosePicA"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/titleIconA"
+        android:layout_toEndOf="@+id/takePicA"
+        android:text="Choose from gallery"
+        android:textSize="10sp"
+        android:layout_toRightOf="@+id/takePicA" />
+
+    <TextView
+        android:id="@+id/titleTeamB"
+        android:padding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="310dp"
+        android:text="Team B Name"
+        android:layout_marginStart="20dp"
+        android:textSize="18sp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp" />
+    <EditText
+        android:id="@+id/teamB"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/titleTeamB"
+        android:layout_marginStart="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="150dp" />
+
+    <TextView
+        android:id="@+id/titleIconB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="360dp"
+        android:layout_marginStart="35dp"
+        android:text="Team B icon"
+        android:textSize="18sp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="35dp" />
+
+    <Button
+        android:id="@+id/takePicB"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/titleIconB"
+        android:layout_toEndOf="@+id/titleTeamB"
+        android:text="Take picture"
+        android:textSize="10sp"
+        android:layout_toRightOf="@+id/titleTeamB"
+        />
+
+    <Button
+        android:id="@+id/choosePicB"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/titleIconB"
+        android:layout_toEndOf="@+id/takePicB"
+        android:text="Choose from gallery"
+        android:textSize="10sp"
+        android:layout_toRightOf="@+id/takePicB" />
+
+    <Button
+        android:id="@+id/addFix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:text="Add fixture"
+        android:layout_centerHorizontal="true"/>
+
+
+
+</RelativeLayout>
