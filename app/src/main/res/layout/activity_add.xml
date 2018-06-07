@@ -128,7 +128,9 @@
         android:layout_toEndOf="@+id/titleTeamA"
         android:text="Take picture"
         android:textSize="10sp"
-        android:layout_toRightOf="@+id/titleTeamA" />
+        android:layout_toRightOf="@+id/titleTeamA"
+        android:onClick="take"
+       />
 
     <Button
         android:id="@+id/choosePicA"
@@ -138,7 +140,9 @@
         android:layout_toEndOf="@+id/takePicA"
         android:text="Choose from gallery"
         android:textSize="10sp"
-        android:layout_toRightOf="@+id/takePicA" />
+        android:layout_toRightOf="@+id/takePicA"
+        android:onClick="choose"
+       />
 
     <TextView
         android:id="@+id/titleTeamB"
@@ -185,6 +189,8 @@
         android:text="Take picture"
         android:textSize="10sp"
         android:layout_toRightOf="@+id/titleTeamB"
+        android:onClick="take"
+
         />
 
     <Button
@@ -195,7 +201,9 @@
         android:layout_toEndOf="@+id/takePicB"
         android:text="Choose from gallery"
         android:textSize="10sp"
-        android:layout_toRightOf="@+id/takePicB" />
+        android:layout_toRightOf="@+id/takePicB"
+        android:onClick="choose"
+       />
 
     <Button
         android:id="@+id/addFix"
@@ -204,7 +212,10 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="15dp"
         android:text="Add fixture"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:onClick="addFixture"
+
+        />
 
 
 
