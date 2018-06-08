@@ -25,45 +25,45 @@ import java.util.Queue;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
-     public static ListView list;
-     public static ArrayList<ListData>listItems=new ArrayList<ListData>();
-     //public static ArrayAdapter<String> adapter;
-     public static int i ;
-     public static int pos=0;
-     public static ArrayList<String>text=new ArrayList<String>();
+    public static ListView list;
+    public static ArrayList<ListData> listItems = new ArrayList<ListData>();
+    //public static ArrayAdapter<String> adapter;
+    public static int i;
+    public static int pos = 0;
+    public static ArrayList<String> text = new ArrayList<String>();
     //public static int [] img={};
-   // public static int[] img1={R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background};
+    // public static int[] img1={R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background};
     //public static int[] img2={R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground};
-    public  Context c=this;
-
+    public Context c = this;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-       super.onCreate(savedInstanceState);
-       setContentView(R.layout.activity_main);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-       list=findViewById(R.id.list);
-       getDataInList();
-       list.setAdapter(new MyBaseAdapter(c,listItems));
-        Toast.makeText(this,listItems.size()+"",Toast.LENGTH_SHORT).show();
-
+        list = findViewById(R.id.list);
+        getDataInList();
+        list.setAdapter(new MyBaseAdapter(c, listItems));
 
 
-
-        }
+    }
 
     private void getDataInList() {
-        for (int i = 0; i < text.size(); i++) {
+      if(text.size()>=1){
 
+            Toast.makeText(c,""+text.size(),Toast.LENGTH_SHORT).show();
 
-                        ListData ld = new ListData();
-            ld.setDescription(text.get(i));
-            ld.setImgResId(R.drawable.ic_launcher_foreground);
-                        listItems.add(ld);
-
-        }
+            // Create a new object for each list item
+           // ListData ld = new ListData();
+             //ld.setDescription(text.get(i));
+            //ld.setImgResId(R.drawable.ic_launcher_foreground);
+            // Add this object into the ArrayList myList
+            listItems.add(i,new ListData());
+        i++;  }
     }
+
+
 
 
 

@@ -4,7 +4,15 @@ public class ListData {
 
     String Description;
 
-   private  int imgResId;
+    int imgResId;
+    ListData(){
+        this.Description=MainActivity.text.get(MainActivity.i);
+        this.imgResId=R.drawable.ic_launcher_background;
+    }
+   /* ListData(String a,int b){
+        this.Description=a;
+        this.imgResId=b;
+    }*/
 
     public String getDescription() {
         return Description;

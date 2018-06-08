@@ -54,6 +54,7 @@ public class Add extends AppCompatActivity {
 
        String str=nameA.getText().toString()+" Vs. "+nameB.getText().toString()+" on "+Date.getText().toString()+", "+Time.getText().toString()+" at "+venue.getText().toString()+". ";
        MainActivity.text.add(str);
+        //Toast.makeText(this,MainActivity.text.get(MainActivity.text.size()-1),Toast.LENGTH_SHORT).show();
 
 //MainActivity.img[MainActivity.img.length]=R.drawable.ic_launcher_foreground;
       // MainActivity.adapter.notifyDataSetChanged();

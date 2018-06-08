@@ -1,6 +1,7 @@
 package e.pnaveena.fifafixturemanager;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,13 +13,14 @@ import java.util.ArrayList;
 
 public class MyBaseAdapter extends BaseAdapter {
 
-    ArrayList<ListData> myList = new ArrayList<ListData>();
+    ArrayList<ListData> myList ;
     LayoutInflater inflater;
     Context context;
 
 
     public MyBaseAdapter(Context context, ArrayList<ListData> myList) {
-         this.context = context;
+        this.myList = myList;
+        this.context = context;
         inflater = LayoutInflater.from(this.context);
     }
 
@@ -34,7 +36,7 @@ public class MyBaseAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        return position;
+        return 0;
     }
 
     @Override
@@ -42,7 +44,7 @@ public class MyBaseAdapter extends BaseAdapter {
         MyViewHolder mViewHolder;
 
         if (convertView == null) {
-            convertView = inflater.inflate(R.layout.row, parent, true);
+            convertView = inflater.inflate(R.layout.row, parent, false);
             mViewHolder = new MyViewHolder(convertView);
             convertView.setTag(mViewHolder);
         } else {
@@ -59,13 +61,12 @@ public class MyBaseAdapter extends BaseAdapter {
     }
 
     private class MyViewHolder {
-        TextView  text;
+        TextView text;
         ImageView Icon;
 
         public MyViewHolder(View item) {
-
-            text =  item.findViewById(R.id.txt);
-            Icon =  item.findViewById(R.id.img1);
+           text = (TextView) item.findViewById(R.id.txt);
+            Icon = (ImageView) item.findViewById(R.id.img1);
         }
     }
 }
