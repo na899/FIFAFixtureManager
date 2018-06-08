@@ -26,28 +26,47 @@ import java.util.Queue;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
      public static ListView list;
-     public static ArrayList<String>listItems=new ArrayList<String >();
-     public static ArrayAdapter<String> adapter;
+     public static ArrayList<ListData>listItems=new ArrayList<ListData>();
+     //public static ArrayAdapter<String> adapter;
      public static int i ;
-
+     public static int pos=0;
+     public static ArrayList<String>text=new ArrayList<String>();
+    //public static int [] img={};
    // public static int[] img1={R.drawable.ic_launcher_background,R.drawable.ic_launcher_background,R.drawable.ic_launcher_background};
     //public static int[] img2={R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground,R.drawable.ic_launcher_foreground};
-    public  static Context c;
+    public  Context c=this;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        c=this;
-        SharedPreferences a=getSharedPreferences("Data",MODE_PRIVATE);
-        // listItems=a.getString("listitems","---").split(",");
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        list=findViewById(R.id.list);
-         adapter= new ArrayAdapter<String>(this,R.layout.row,R.id.txt,listItems);
-        list.setAdapter(adapter);
+       super.onCreate(savedInstanceState);
+       setContentView(R.layout.activity_main);
+
+       list=findViewById(R.id.list);
+       getDataInList();
+       list.setAdapter(new MyBaseAdapter(c,listItems));
+        Toast.makeText(this,listItems.size()+"",Toast.LENGTH_SHORT).show();
 
 
+
+
+        }
+
+    private void getDataInList() {
+        for (int i = 0; i < text.size(); i++) {
+
+
+                        ListData ld = new ListData();
+            ld.setDescription(text.get(i));
+            ld.setImgResId(R.drawable.ic_launcher_foreground);
+                        listItems.add(ld);
+
+        }
     }
+
+
+
 
     public void add(View v){
 
@@ -58,6 +77,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+       // Toast.makeText(MainActivity.c,"Position"+position,Toast.LENGTH_SHORT).show();
+
+
 
     }
 }
@@ -69,3 +91,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
 
+
+
+//Toast.makeText(this,""+text.size(),Toast.LENGTH_SHORT).show();
+
+      /*  c=this;
+        SharedPreferences a=getSharedPreferences("Data",MODE_PRIVATE);
+        list=findViewById(R.id.list);
+        adapter= new ArrayAdapter<String>(this,R.layout.row,R.id.txt,listItems);
+        list.setAdapter(adapter);
+*/
+//list.setOnItemClickListener(this);

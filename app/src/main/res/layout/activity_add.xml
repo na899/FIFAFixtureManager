@@ -36,7 +36,7 @@
         android:layout_marginStart="150dp"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="150dp"
-        android:inputType="date"/>
+        />
     <TextView
         android:id="@+id/titleTime"
         android:layout_width="wrap_content"
@@ -45,8 +45,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="50dp"
         android:layout_marginTop="110dp"
-        android:text="Time"
         android:textSize="18sp"
+        android:text="Time"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="50dp" />
     <EditText
@@ -57,8 +57,7 @@
         android:layout_alignBottom="@+id/titleTime"
         android:layout_marginStart="150dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="150dp"
-        android:inputType="time"/>
+        android:layout_marginLeft="150dp" />
     <TextView
         android:id="@+id/titleVenue"
         android:layout_width="wrap_content"

@@ -30,9 +30,9 @@ public class Add extends AppCompatActivity {
         setContentView(R.layout.activity_add);
         nameA=findViewById(R.id.teamA);
          nameB=findViewById(R.id.teamB);
-        EditText Date=findViewById(R.id.date);
-        EditText Time=findViewById(R.id.time);
-        EditText venue=findViewById(R.id.venue);
+         Date=findViewById(R.id.date);
+        Time=findViewById(R.id.time);
+         venue=findViewById(R.id.venue);
 
 
 
@@ -43,22 +43,23 @@ public class Add extends AppCompatActivity {
 
 
 
-        SharedPreferences a=getSharedPreferences("Data", Context.MODE_PRIVATE);
+      /*  SharedPreferences a=getSharedPreferences("Data", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor=a.edit();
         editor.putString("teamA",nameA.getText().toString());
         editor.putString("teamB",nameB.getText().toString());
 
-        editor.apply();
+        editor.apply();*/
 
 
 
-      String str=a.getString("teamA","---")+" Vs. "+a.getString("teamB","---");
-MainActivity.listItems.add(str);
-        MainActivity.adapter.notifyDataSetChanged();
-/*
+       String str=nameA.getText().toString()+" Vs. "+nameB.getText().toString()+" on "+Date.getText().toString()+", "+Time.getText().toString()+" at "+venue.getText().toString()+". ";
+       MainActivity.text.add(str);
 
-        // Toast.makeText(this,"hello",Toast.LENGTH_SHORT).show();*/
-      Intent intent=new Intent(this,MainActivity.class);
+//MainActivity.img[MainActivity.img.length]=R.drawable.ic_launcher_foreground;
+      // MainActivity.adapter.notifyDataSetChanged();
+
+
+ Intent intent=new Intent(this,MainActivity.class);
 
      startActivity(intent);
 
@@ -77,7 +78,7 @@ MainActivity.listItems.add(str);
 
     protected void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
         super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
-        ImageView imageview = null;
+        ImageView imageview =null;
         switch(requestCode) {
             case 0:
 
