@@ -55,18 +55,20 @@ public class MyBaseAdapter extends BaseAdapter {
 
 
         mViewHolder.text.setText(currentListData.getDescription());
-        mViewHolder.Icon.setImageResource(currentListData.getImgResId());
+        mViewHolder.Icon1.setImageURI(currentListData.getImg1());
+        mViewHolder.Icon2.setImageURI(currentListData.getImg2());
 
         return convertView;
     }
 
     private class MyViewHolder {
         TextView text;
-        ImageView Icon;
+        ImageView Icon1,Icon2;
 
         public MyViewHolder(View item) {
            text = (TextView) item.findViewById(R.id.txt);
-            Icon = (ImageView) item.findViewById(R.id.img1);
+            Icon1 = (ImageView) item.findViewById(R.id.img1);
+            Icon2 = (ImageView) item.findViewById(R.id.img2);
         }
     }
 }

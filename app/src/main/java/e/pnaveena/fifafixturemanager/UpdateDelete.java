@@ -1,87 +1,69 @@
 package e.pnaveena.fifafixturemanager;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
-import android.provider.ContactsContract;
 import android.provider.MediaStore;
-import android.support.transition.Transition;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageSwitcher;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-
-public class Add extends AppCompatActivity {
+public class UpdateDelete extends AppCompatActivity {
+    Uri img1;
+    Uri img2;
+    Button take;
+    Button choose;
     EditText nameA;
     EditText nameB;
     EditText Date;
     EditText Time;
     EditText venue;
-    Uri img1;
-    Uri img2;
-    Button take;
-    Button choose;
-
+int pos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add);
-         nameA=findViewById(R.id.teamA);
-         nameB=findViewById(R.id.teamB);
-         Date=findViewById(R.id.date);
-         Time=findViewById(R.id.time);
-         venue=findViewById(R.id.venue);
-
-        MainActivity.status1.add(MainActivity.i,0);
-        MainActivity.status2.add(MainActivity.i,0);
+        setContentView(R.layout.activity_update_delete);
+        Intent a=new Intent();
+        pos=a.getIntExtra("position",0);
+        nameA=findViewById(R.id.TeamA);
+        nameB=findViewById(R.id.TeamB);
+        Date=findViewById(R.id.Date);
+        Time=findViewById(R.id.Time);
+        venue=findViewById(R.id.Venue);
+        nameA.setText(MainActivity.team1.get(pos));
+        nameB.setText(MainActivity.team2.get(pos));
+        Date.setText(MainActivity.date.get(pos));
+        Time.setText(MainActivity.time.get(pos));
+        venue.setText(MainActivity.venue.get(pos));
 
 
 
     }
-    public void addFixture(View v){
 
 
+   public void update(View v){
 
-      /*  SharedPreferences a=getSharedPreferences("Data", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor=a.edit();
-        editor.putString("teamA",nameA.getText().toString());
-        editor.putString("teamB",nameB.getText().toString());
-
-        editor.apply();*/
-        MainActivity.team1.add(MainActivity.i,nameA.getText().toString());
-        MainActivity.team2.add(MainActivity.i,nameB.getText().toString());
-        MainActivity.date.add(MainActivity.i,Date.getText().toString());
-        MainActivity.time.add(MainActivity.i,Time.getText().toString());
-        MainActivity.venue.add(MainActivity.i,venue.getText().toString());
+       MainActivity.team1.set(MainActivity.i,nameA.getText().toString());
+       MainActivity.team2.set(MainActivity.i,nameB.getText().toString());
+       MainActivity.date.set(MainActivity.i,Date.getText().toString());
+       MainActivity.time.set(MainActivity.i,Time.getText().toString());
+       MainActivity.venue.set(MainActivity.i,venue.getText().toString());
 
 
 
        String str=nameA.getText().toString()+" Vs. "+nameB.getText().toString()+" on "+Date.getText().toString()+", "+Time.getText().toString()+" at "+venue.getText().toString()+". ";
        MainActivity.text.add(str);
-       //MainActivity.img.add(MainActivity.i,R.drawable.ic_launcher_foreground);
-       if(MainActivity.status1.get(MainActivity.i)==1&&MainActivity.status2.get(MainActivity.i)==1){
-           MainActivity.image1.add(MainActivity.i,img1);
-           MainActivity.image2.add(MainActivity.i,img2);
+       //Intent intent=new Intent(this,MainActivity.class);
+       //startActivity(intent);
 
-           Intent intent=new Intent(this,MainActivity.class);
-           startActivity(intent);
-       }
-       else Toast.makeText(this,"please set icon",Toast.LENGTH_SHORT).show();
-        //Toast.makeText(this,MainActivity.text.get(MainActivity.text.size()-1),Toast.LENGTH_SHORT).show();
+   }
+   public void delete(View v){
 
-//MainActivity.img[MainActivity.img.length]=R.drawable.ic_launcher_foreground;
-      // MainActivity.adapter.notifyDataSetChanged();
+   }
 
 
-
-    }
 
     public void takeA(View v){
         Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -114,13 +96,13 @@ public class Add extends AppCompatActivity {
                 if(resultCode == RESULT_OK){
 
                     Uri selectedImage = imageReturnedIntent.getData();
-                     img1=selectedImage;
-                     MainActivity.status1.add(MainActivity.i,1);
-                     take=findViewById(R.id.takePicA);
-                     choose=findViewById(R.id.choosePicA);
-                     take.setEnabled(false);
-                     choose.setEnabled(false);
-                   // image1.setImageURI(selectedImage);
+                    img1=selectedImage;
+                    MainActivity.status1.add(MainActivity.i,1);
+                    take=findViewById(R.id.takePicA);
+                    choose=findViewById(R.id.choosePicA);
+                   // take.setEnabled(false);
+                    //choose.setEnabled(false);
+                    // image1.setImageURI(selectedImage);
                 }
 
                 break;
@@ -131,8 +113,8 @@ public class Add extends AppCompatActivity {
                     MainActivity.status2.add(MainActivity.i,1);
                     take=findViewById(R.id.takePicB);
                     choose=findViewById(R.id.choosePicB);
-                    take.setEnabled(false);
-                    choose.setEnabled(false);
+                   // take.setEnabled(false);
+                    //choose.setEnabled(false);
                 }
                 break;
         }

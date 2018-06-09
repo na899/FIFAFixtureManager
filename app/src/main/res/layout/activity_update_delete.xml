@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Add"
+    tools:context=".UpdateDelete"
     >
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Fixture"
+        android:text="Update and Delete "
         android:textAlignment="center"
         android:textSize="25sp"
         android:textAllCaps="true"/>
@@ -28,7 +28,7 @@
         android:layout_marginLeft="50dp" />
 
     <EditText
-        android:id="@+id/date"
+        android:id="@+id/Date"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -50,7 +50,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="50dp" />
     <EditText
-        android:id="@+id/time"
+        android:id="@+id/Time"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -73,7 +73,7 @@
         android:padding="5dp"/>
 
     <EditText
-        android:id="@+id/venue"
+        android:id="@+id/Venue"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -97,7 +97,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="20dp" />
     <EditText
-        android:id="@+id/teamA"
+        android:id="@+id/TeamA"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -120,7 +120,7 @@
         android:layout_marginLeft="35dp" />
 
     <Button
-        android:id="@+id/takePicA"
+        android:id="@+id/TakePicA"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_alignTop="@+id/titleIconA"
@@ -129,19 +129,19 @@
         android:textSize="10sp"
         android:layout_toRightOf="@+id/titleTeamA"
         android:onClick="takeA"
-       />
+        />
 
     <Button
-        android:id="@+id/choosePicA"
+        android:id="@+id/ChoosePicA"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_alignTop="@+id/titleIconA"
-        android:layout_toEndOf="@+id/takePicA"
+        android:layout_toEndOf="@+id/TakePicA"
         android:text="Choose from gallery"
         android:textSize="10sp"
         android:layout_toRightOf="@+id/takePicA"
         android:onClick="chooseA"
-       />
+        />
 
     <TextView
         android:id="@+id/titleTeamB"
@@ -157,7 +157,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="20dp" />
     <EditText
-        android:id="@+id/teamB"
+        android:id="@+id/TeamB"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -180,7 +180,7 @@
         android:layout_marginLeft="35dp" />
 
     <Button
-        android:id="@+id/takePicB"
+        android:id="@+id/TakePicB"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_alignTop="@+id/titleIconB"
@@ -193,28 +193,40 @@
         />
 
     <Button
-        android:id="@+id/choosePicB"
+        android:id="@+id/ChoosePicB"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_alignTop="@+id/titleIconB"
-        android:layout_toEndOf="@+id/takePicB"
+        android:layout_toEndOf="@+id/TakePicB"
         android:text="Choose from gallery"
         android:textSize="10sp"
         android:layout_toRightOf="@+id/takePicB"
         android:onClick="chooseB"
-       />
+        />
 
     <Button
-        android:id="@+id/addFix"
+        android:id="@+id/update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="15dp"
-        android:text="Add fixture"
-        android:layout_centerHorizontal="true"
-        android:onClick="addFixture"
+        android:layout_alignStart="@+id/titleIconA"
+        android:layout_marginBottom="20dp"
+        android:onClick="update"
+        android:text="Update fixture"
+        android:layout_alignLeft="@+id/titleIconA"/>
 
-        />
+    <Button
+        android:id="@+id/del"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/update"
+
+        android:layout_marginEnd="40dp"
+        android:onClick="delete"
+        android:text="Delete fixture"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="40dp" />
 
 
 
