@@ -12,18 +12,13 @@ public class ListData {
     Uri img2;
     ListData(int pos){
         this.Description=MainActivity.text.get(pos);
-       // Log.d("hey", "ListData:?? ");
-        if(MainActivity.status1.get(pos)==1)
+
+        //if(MainActivity.status1.get(pos)==1)
             this.img1= MainActivity.image1.get(pos);
-        if(MainActivity.status2.get(pos)==1)
+        //if(MainActivity.status2.get(pos)==1)
             this.img2= MainActivity.image2.get(pos);
-        //this.imgResId=R.drawable.ic_launcher_foreground;
-      //  Log.d("hey","UHOH");
-    }
-   /* ListData(String a,int b){
-        this.Description=a;
-        this.imgResId=b;
-    }*/
+
+          }
 
     public String getDescription() {
         return Description;

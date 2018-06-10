@@ -5,12 +5,13 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-public class UpdateDelete extends AppCompatActivity {
+public class Update extends AppCompatActivity {
     Uri img1;
     Uri img2;
     Button take;
@@ -24,9 +25,9 @@ int pos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_delete);
-        Intent a=new Intent();
-        pos=a.getIntExtra("position",0);
+        setContentView(R.layout.activity_update);
+        Intent a=getIntent();
+        pos=a.getIntExtra("pos",11);
         nameA=findViewById(R.id.TeamA);
         nameB=findViewById(R.id.TeamB);
         Date=findViewById(R.id.Date);
@@ -44,24 +45,34 @@ int pos;
 
 
    public void update(View v){
+       Log.d("hey", "update: okay");
+       MainActivity.team1.set(pos,nameA.getText().toString());
+       MainActivity.team2.set(pos,nameB.getText().toString());
+       MainActivity.date.set(pos,Date.getText().toString());
+       MainActivity.time.set(pos,Time.getText().toString());
+       MainActivity.venue.set(pos,venue.getText().toString());
+       if(MainActivity.status1.get(pos)==2){
+           MainActivity.image1.set(pos,img1);
+           MainActivity.status1.set(pos,1);
+       }
+       if(MainActivity.status2.get(pos)==2){
+           MainActivity.image2.set(pos,img2);
+           MainActivity.status2.set(pos,1);
+       }
 
-       MainActivity.team1.set(MainActivity.i,nameA.getText().toString());
-       MainActivity.team2.set(MainActivity.i,nameB.getText().toString());
-       MainActivity.date.set(MainActivity.i,Date.getText().toString());
-       MainActivity.time.set(MainActivity.i,Time.getText().toString());
-       MainActivity.venue.set(MainActivity.i,venue.getText().toString());
 
 
 
        String str=nameA.getText().toString()+" Vs. "+nameB.getText().toString()+" on "+Date.getText().toString()+", "+Time.getText().toString()+" at "+venue.getText().toString()+". ";
-       MainActivity.text.add(str);
-       //Intent intent=new Intent(this,MainActivity.class);
-       //startActivity(intent);
+       MainActivity.text.set(pos,str);
+       MainActivity.listItems.set(pos,new ListData(pos));
+       //Toast.makeText(this,"hello",Toast.LENGTH_SHORT).show();
+      // MainActivity.list.setAdapter(new MyBaseAdapter(MainActivity.getMain(), MainActivity.listItems));
+       Intent intent=new Intent(this,MainActivity.class);
+      startActivity(intent);
 
    }
-   public void delete(View v){
-
-   }
+  
 
 
 
@@ -95,22 +106,21 @@ int pos;
 
                 if(resultCode == RESULT_OK){
 
-                    Uri selectedImage = imageReturnedIntent.getData();
-                    img1=selectedImage;
-                    MainActivity.status1.add(MainActivity.i,1);
+
+                    img1 = imageReturnedIntent.getData();
+                    MainActivity.status1.set(pos,2);
                     take=findViewById(R.id.takePicA);
                     choose=findViewById(R.id.choosePicA);
                    // take.setEnabled(false);
                     //choose.setEnabled(false);
-                    // image1.setImageURI(selectedImage);
+
                 }
 
                 break;
             case 1:
                 if(resultCode == RESULT_OK){
-                    Uri selectedImage = imageReturnedIntent.getData();
-                    img2=selectedImage;
-                    MainActivity.status2.add(MainActivity.i,1);
+                    img2 = imageReturnedIntent.getData();
+                    MainActivity.status2.set(pos,2);
                     take=findViewById(R.id.takePicB);
                     choose=findViewById(R.id.choosePicB);
                    // take.setEnabled(false);

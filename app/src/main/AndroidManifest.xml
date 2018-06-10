@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Add"></activity>
-        <activity android:name=".UpdateDelete"></activity>
+        <activity android:name=".Update"></activity>
     </application>
 
 </manifest>
